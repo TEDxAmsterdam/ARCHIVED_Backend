@@ -1,0 +1,268 @@
+FORMAT: 1A
+HOST: http://api.tedx.amsterdam
+
+# tedxamsterdam
+
+CMS apis
+
+## Posts Collection [/posts?filter%5Bwhere%5D%5Btitle%5D={query}&filter%5Blimit%5D={limit}]
+
+### List / Search Posts [GET]
+
+List or search posts using the filter request parameter.
+
+"filter[where][title]=TEDX&filter[limit]=1"
+
++ Response 200 (application/json)
+
+        [
+            {   
+                "id": 2
+                "title": "#TEDxAMSTERDAM loves #DEV",
+                "published": "2015-08-05T08:40:51.620Z",
+                "content": "We welcome all developers that share the spirit of open source development and would like to contribute to make TEDx.Amsterdam the most awesome community built website ever.",
+                "author": "R.Obot",
+                "tags": [
+                    "nodejs",
+                    "reactjs",
+                    "loopback"
+                ],
+                "categories": [
+                    "technology",
+                    "dev"
+                ]
+            }
+        ]
+
+## Modify Posts Collection [/posts]
+
+### Create Post [POST]
+
+Create a post.
+
++ Request (application/json)
+
+        {
+            "title": "#TEDxAMSTERDAM loves #DEV",
+            "content": "We welcome all developers that share the spirit of open source development and would like to contribute to make TEDx.Amsterdam the most awesome community built website ever.",
+            "author": "R.Obot",
+            "tags": [
+                "nodejs",
+                "reactjs",
+                "loopback"
+            ],
+            "categories": [
+                "technology",
+                "dev"
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /posts/2
+
+    + Body
+            
+            {
+                "id": 2
+                "title": "#TEDxAMSTERDAM loves #DEV",
+                "published": "2015-08-05T08:40:51.620Z",
+                "content": "We welcome all developers that share the spirit of open source development and would like to contribute to make TEDx.Amsterdam the most awesome community built website ever.",
+                "author": "R.Obot",
+                "tags": 
+                    [
+                        "nodejs",
+                        "reactjs",
+                        "loopback"
+                    ],
+                "categories": 
+                    [
+                        "technology",
+                        "dev"
+                    ]
+            }
+            
+### Update Post [PUT]
+
+Update a post.
+
++ Request (application/json)
+
+        {
+            "title": "#TEDxAMSTERDAM loves #DEV even more",
+            "content": "We welcome all developers that share the spirit of open source development and would like to contribute to make TEDx.Amsterdam the most awesome community built website ever.",
+            "author": "R.Obot",
+            "tags": [
+                "nodejs",
+                "reactjs",
+                "loopback"
+            ],
+            "categories": [
+                "technology",
+                "dev"
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /posts/2
+
+    + Body
+            
+            {
+                "id": 2
+                "title": "#TEDxAMSTERDAM loves #DEV even more",
+                "published": "2015-08-05T08:40:51.620Z",
+                "content": "We welcome all developers that share the spirit of open source development and would like to contribute to make TEDx.Amsterdam the most awesome community built website ever.",
+                "author": "R.Obot",
+                "tags": 
+                    [
+                        "nodejs",
+                        "reactjs",
+                        "loopback"
+                    ],
+                "categories": 
+                    [
+                        "technology",
+                        "dev"
+                    ]
+            }
+            
+### Delete Post [DELETE]
+
+Delete a post.
+
++ Request (application/json)
+
+        {
+            "id": 2
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /posts/2
+
+    + Body
+            
+            true
+
+## Media Collection [/media?filter%5Bwhere%5D%5Btitle%5D={query}&filter%5Blimit%5D={limit}]
+
+### List / Search Media [GET]
+
+List or search media using filter request parameter.
+
+"filter[where][title]=TEDX&filter[limit]=1"
+
++ Response 200 (application/json)
+
+        [
+            {   
+                "id": 1
+                "title": "#TEDxAMSTERDAM loves #DEV",
+                "created": "2015-08-05T08:40:51.620Z",
+                "modified": "2015-08-05T08:40:51.620Z",
+                "filename": "1.jpg",
+                "path": "/media/",
+                "mimetype": "image/jpeg"
+            }
+        ]
+        
+## Modify Media Collection [/media]
+
+### Create Medium [POST]
+
+Create medium.
+
++ Request (multipart/form-data; boundary=---BOUNDARY)
+
+        -----BOUNDARY
+        Content-Disposition: form-data; name="image[file]"; filename="image.jpg"
+        Content-Type: image/jpeg
+        Content-Transfer-Encoding: base64
+
+        /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+        HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+        MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIA
+        AhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEB
+        AAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AL+AD//Z
+        -----BOUNDARY
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /media/2
+
+    + Body
+            
+            {   
+                "id": 2
+                "title": "#TEDxAMSTERDAM loves #DEV even more",
+                "created": "2015-08-05T08:41:51.620Z",
+                "modified": "2015-08-05T08:41:51.620Z",
+                "filename": "2.jpg",
+                "path": "/media/",
+                "mimetype": "image/jpeg"
+            }
+            
+### Update Medium [PUT]
+
++ Request (multipart/form-data; boundary=---BOUNDARY)
+
+        -----BOUNDARY
+        Location: /media/2
+        Content-Disposition: form-data; name="image[file]"; filename="image.jpg"
+        Content-Type: image/jpeg
+        Content-Transfer-Encoding: base64
+
+        /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+        HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+        MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIA
+        AhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEB
+        AAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AL+AD//Z
+        -----BOUNDARY
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /media/2
+
+    + Body
+            
+            {   
+                "id": 2
+                "title": "#TEDxAMSTERDAM loves #DEV even more",
+                "created": "2015-08-05T08:41:51.620Z",
+                "modified": "2015-08-05T08:42:51.620Z",
+                "filename": "2.jpg",
+                "path": "/media/",
+                "mimetype": "image/jpeg"
+            }
+            
+### Delete Medium [DELETE]
+
+Delete a medium.
+
++ Request (application/json)
+
+        {
+            "id": 2
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /media/2
+
+    + Body
+            
+            true
