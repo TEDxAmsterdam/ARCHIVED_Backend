@@ -1,0 +1,26 @@
+{
+  "name": "user",
+  "base": "User",
+  "strict": false,
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+		"user_id": {
+      "type": "string"
+    }
+	},
+  "validations": [],
+  "relations": {},
+  "acls": [
+		{
+			"property": "authenticate",
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+	],
+  "methods": {}
+}

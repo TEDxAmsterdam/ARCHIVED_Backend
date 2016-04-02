@@ -2,5 +2,14 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "mysqlDs": {
+    "host": "localhost",
+    "port": 3306,
+    "database": "tedxapi_dev",
+    "username": "test",
+    "password": "test",
+    "name": "mysqlDs",
+    "connector": "mysql"
   }
 }

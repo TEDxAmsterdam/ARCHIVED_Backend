@@ -9,5 +9,6 @@
     	"title": "TEDxDEV API",
     	"description": ""
   	}
-  }
+  },
+	"./components/logger":{}
 }
