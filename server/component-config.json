@@ -1,5 +1,13 @@
 {
-  "loopback-component-explorer": {
-    "mountPath": "/explorer"
+	"loopback-component-explorer": {
+    "mountPath": "/explorer",
+		"uiDirs": [
+			"/app/client/public",
+			"/Users/daveligthart/Projects/tedxdev/backend/client/public"
+		],
+		"apiInfo": {
+    	"title": "TEDxDEV API",
+    	"description": ""
+  	}
   }
 }
