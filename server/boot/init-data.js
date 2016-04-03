@@ -6,16 +6,14 @@ var server = require('../server');
 
 module.exports = function(app) {
 
-
 	function createSchema() {
 			var ds = server.dataSources.mysqlDs;
 			var lbTables = ['AccessToken', 'ACL', 'RoleMapping', 'Role', 'Tag', 'Post', 'Author', 'Media'];
-			ds.autoupdate(lbTables, function(er) {
-				if (er) throw er;
+			ds.autoupdate(lbTables, function(err, res) {
+				if (err) throw err;
 				console.log('Tables [' + lbTables + '] created in ', ds.adapter.name);
 				ds.disconnect();
 			});
-
 			return true;
 	}
 
@@ -60,7 +58,8 @@ module.exports = function(app) {
 				slug: 'post-name-' + i,
         description: 'Post description ' + i,
         authorId: i,
-        tagIds: ['1', '2']
+        tagIds: ['1', '2'],
+				mediaIds: ['1', '2', '3']
       };
       Post.create(newItem, function (err, res) {
         if (err) console.log(err);
@@ -97,12 +96,12 @@ module.exports = function(app) {
 	    }
 	}
 
-	/*async.series([
+	async.series([
 		//	function(cb){ destroyData(); cb();  },
-//			function(cb){ createSchema(); cb(); },
+			function(cb){ createSchema(); cb(); },
       function(cb){ createTags(3); cb(); },
       function(cb){ createAuthors(3); cb(); },
       function(cb){ createPosts(3); cb(); },
 			function(cb){ createMedia(3); cb(); }
-    ]); */
+    ]);
 };

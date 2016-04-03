@@ -57,6 +57,15 @@
         "forceId": false
       }
     },
+		"media": {
+      "type": "referencesMany",
+      "model": "Media",
+      "property": "mediaIds",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    },
 		"author": {
       "type": "belongsTo",
       "model": "Author"
