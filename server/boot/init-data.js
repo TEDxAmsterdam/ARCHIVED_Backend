@@ -4,6 +4,9 @@
 var async = require('async');
 var server = require('../server');
 
+// omit error: possible EventEmitter memory leak detected. 11 connected listeners added
+require('events').EventEmitter.prototype._maxListeners = 100;
+
 module.exports = function(app) {
 
 	function createSchema() {
