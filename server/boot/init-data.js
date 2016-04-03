@@ -24,6 +24,8 @@ module.exports = function(app) {
   var Post = app.models.Post;
   var Author = app.models.Author;
 	var Media = app.models.Media;
+ 	var Role = app.models.Role;
+	var RoleMapping = app.models.RoleMapping;
 
 	function destroyData() {
     var models = [Tag, Post, Author, Media];
@@ -49,6 +51,19 @@ module.exports = function(app) {
         console.log('Created Author with id ' + res.id);
       });
     }
+
+		Role.create({
+				name: 'admin'
+			}, function(err, role) {
+				if (err) cb(err);
+				role.principals.create({
+					principalType: RoleMapping.USER,
+					principalId: 1
+				}, function(err, principal) {
+
+				});
+			}
+		);
 
 		return true;
   }

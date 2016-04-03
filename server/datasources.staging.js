@@ -1,6 +1,6 @@
 var parseDbUrl = require("parse-database-url");
 var dbConfig = parseDbUrl(process.env.JAWSDB_URL);
-console.log(dbConfig);
+//console.log(dbConfig);
 module.exports = {
   mysqlDs: {
     name: "mysqlDs",
