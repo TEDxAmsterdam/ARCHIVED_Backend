@@ -19,7 +19,7 @@
 	},
   "User": {
     "dataSource": "mysqlDs",
-		"public": false
+		"public": true
   },
   "AccessToken": {
     "dataSource": "mysqlDs",
@@ -37,11 +37,19 @@
     "dataSource": "mysqlDs",
     "public": false
   },
-	"post": {
+	"Tag": {
     "dataSource": "mysqlDs",
     "public": true
   },
-	"media": {
+	"Post": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+	"Media": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Author": {
     "dataSource": "mysqlDs",
     "public": true
   }

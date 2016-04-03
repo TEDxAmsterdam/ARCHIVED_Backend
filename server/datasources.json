@@ -6,8 +6,8 @@
   "mysqlDs": {
     "host": "localhost",
     "port": 3306,
-    "database": "tedxapi_dev",
-    "username": "test",
+    "database": "tedx_api_dev",
+    "username": "root",
     "password": "test",
     "name": "mysqlDs",
     "connector": "mysql"

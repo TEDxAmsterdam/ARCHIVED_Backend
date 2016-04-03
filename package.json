@@ -8,6 +8,7 @@
     "posttest": "nsp check"
   },
   "dependencies": {
+    "async": "^2.0.0-rc.2",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "helmet": "^0.14.0",

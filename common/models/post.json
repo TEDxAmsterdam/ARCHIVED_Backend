@@ -1,24 +1,65 @@
 {
-  "name": "post",
-  "plural": "posts",
+  "name": "Post",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "id": {
+		"id": {
       "type": "number",
-      "id": true,
+			"id": true,
       "required": true
+    },
+		"slug": {
+			"type": "string",
+      "required": true
+		},
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "default": "new"
+    },
+    "description": {
+      "type": "string"
+    },
+    "authorId": {
+      "type": "number"
+    },
+    "tagIds": {
+      "type": [
+        "string"
+      ]
+    },
+    "created": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
+    },
+    "archived": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   },
   "validations": [],
   "relations": {
-		"user": {
+		"tags": {
+      "type": "referencesMany",
+      "model": "Tag",
+      "property": "tagIds",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    },
+		"author": {
       "type": "belongsTo",
-      "model": "user",
-      "foreignKey": ""
+      "model": "Author"
     }
 	},
   "acls": [

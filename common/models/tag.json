@@ -1,0 +1,42 @@
+{
+  "name": "Tag",
+  "base": "PersistedModel",
+  "strict": "throw",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "persistUndefinedAsNull": true,
+  "mixins": {
+    "Paginate": {
+      "config": {
+        "limit": "10"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+			"required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+		{
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+	],
+  "methods": []
+}

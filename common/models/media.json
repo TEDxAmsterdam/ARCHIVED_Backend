@@ -1,5 +1,5 @@
 {
-  "name": "media",
+  "name": "Media",
   "plural": "media",
   "base": "PersistedModel",
   "idInjection": true,
@@ -11,14 +11,16 @@
       "type": "number",
       "id": true,
       "required": true
-    }
+    },
+		"url": {
+			"type": "string"
+		}
   },
   "validations": [],
   "relations": {
-		"user": {
+		"author": {
       "type": "belongsTo",
-      "model": "user",
-      "foreignKey": ""
+      "model": "Author"
     }
 	},
   "acls": [
