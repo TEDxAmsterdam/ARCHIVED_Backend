@@ -9,11 +9,11 @@ module.exports = function(app) {
 
 	function createSchema() {
 			var ds = server.dataSources.mysqlDs;
-			var lbTables = ['AccessToken', 'ACL', 'RoleMapping', 'Role', 'Tag', 'Post', 'Author'];
+			var lbTables = ['AccessToken', 'ACL', 'RoleMapping', 'Role', 'Tag', 'Post', 'Author', 'Media'];
 			ds.autoupdate(lbTables, function(er) {
 				if (er) throw er;
 				console.log('Tables [' + lbTables + '] created in ', ds.adapter.name);
-				//ds.disconnect();
+				ds.disconnect();
 			});
 
 			return true;
@@ -82,11 +82,26 @@ module.exports = function(app) {
     }
   }
 
-	/*async.series([
+	function createMedia(amount) {
+		  for (var i = 1; i <= amount; i++) {
+	      var newMedia = {
+					id: i,
+	        url: 'http://icons.iconarchive.com/icons/mattahan/umicons/256/Number-'+i+'-icon.png',
+					authorId: i
+	      };
+	      Media.create(newMedia, function (err, res) {
+	        if (err) console.log(err);
+	        console.log('Created Media with id ' + res.id);
+	      });
+	    }
+	}
+
+	async.series([
 		//	function(cb){ destroyData(); cb();  },
 			function(cb){ createSchema(); cb(); },
       function(cb){ createTags(3); cb(); },
       function(cb){ createAuthors(3); cb(); },
-      function(cb){ createPosts(3); cb(); }
-    ]);*/
+      function(cb){ createPosts(3); cb(); },
+			function(cb){ createMedia(3); cb(); }
+    ]);
 };
