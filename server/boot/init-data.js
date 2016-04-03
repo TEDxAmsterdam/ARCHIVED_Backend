@@ -97,7 +97,7 @@ module.exports = function(app) {
 	}
 
 	async.series([
-		//	function(cb){ destroyData(); cb();  },
+			function(cb){ destroyData(); cb();  },
 //			function(cb){ createSchema(); cb(); },
   //    function(cb){ createTags(3); cb(); },
       function(cb){ createAuthors(3); cb(); },
