@@ -22,9 +22,10 @@ module.exports = function(app) {
 	var Tag = app.models.Tag;
   var Post = app.models.Post;
   var Author = app.models.Author;
+	var Media = app.models.Media;
 
 	function destroyData() {
-    var models = [Tag, Post, Author];
+    var models = [Tag, Post, Author, Media];
     async.each(models, function (model, cb) {
       console.log('Clearing %s data', model.modelName);
       model.destroyAll();
