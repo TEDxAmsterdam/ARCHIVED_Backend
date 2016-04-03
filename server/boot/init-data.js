@@ -48,19 +48,19 @@ module.exports = function(app) {
       };
       Author.create(newPerson, function (err, res) {
         if (err) console.log(err);
-        console.log('Created Author with id ' + res.id);
+				else console.log('Created Author with id ' + res.id);
       });
     }
 
 		Role.create({
 				name: 'admin'
 			}, function(err, role) {
-				if (err) cb(err);
+				if (err) console.log(err);
 				role.principals.create({
 					principalType: RoleMapping.USER,
 					principalId: 1
 				}, function(err, principal) {
-
+					 console.log('Created principal:', principal);
 				});
 			}
 		);

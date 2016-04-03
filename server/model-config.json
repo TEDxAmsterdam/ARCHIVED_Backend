@@ -13,6 +13,10 @@
       "./mixins"
     ]
   },
+	"user": {
+    "dataSource": "mysqlDs",
+		"public": true
+  },
   "User": {
     "dataSource": "mysqlDs",
 		"public": false
