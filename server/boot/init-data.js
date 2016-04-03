@@ -15,7 +15,7 @@ module.exports = function(app) {
 			ds.autoupdate(lbTables, function(err, res) {
 				if (err) throw err;
 				console.log('Tables [' + lbTables + '] created in ', ds.adapter.name);
-				ds.disconnect();
+			//	ds.disconnect();
 			});
 			return true;
 	}
