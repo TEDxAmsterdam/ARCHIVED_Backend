@@ -13,7 +13,7 @@ module.exports = function(app) {
 			ds.autoupdate(lbTables, function(er) {
 				if (er) throw er;
 				console.log('Tables [' + lbTables + '] created in ', ds.adapter.name);
-				ds.disconnect();
+				//ds.disconnect();
 			});
 
 			return true;
