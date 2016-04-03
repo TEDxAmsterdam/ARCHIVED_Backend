@@ -1,4 +1,4 @@
-if(process.env.JAWSDB_URL) {
+
 	var parseDbUrl = require("parse-database-url");
 	var dbConfig = parseDbUrl(process.env.JAWSDB_URL);
 	console.log(dbConfig);
@@ -13,4 +13,3 @@ if(process.env.JAWSDB_URL) {
 	    database: dbConfig.database
 	  }
 	};
-}
