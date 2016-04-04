@@ -4,14 +4,21 @@ authModelName = 'user';
 
 accessTokenModelName = 'accessToken';
 
+var email = process.env.LB_SU_UN;
+var password = process.env.LB_SU_PW;
+
+if(!email) email = 'test@127.0.0.1';
+if(!password) password = 'test';
+
 adminUser = {
-  email: process.env.LB_SU_UN,
+  email: email,
   username: 'superadmin',
-  password: process.env.LB_SU_PW,
+  password: password,
   created: new Date
 };
 
-module.exports = function(loopbackApplication) {
+module.exports = function(loopbackApplication, options) {
+	console.log('create-admin loaded', adminUser);
   var ACL, AccessToken, Role, RoleMapping, User, createDefaultAdmin, createSuperAdminRole;
   ACL = loopbackApplication.models.ACL;
   Role = loopbackApplication.models.Role;

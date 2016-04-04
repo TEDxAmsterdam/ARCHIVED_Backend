@@ -10,5 +10,6 @@
     	"description": ""
   	}
   },
-	"./components/logger":{}
+	"./components/logger":{},
+	"./components/create-admin":{}
 }
