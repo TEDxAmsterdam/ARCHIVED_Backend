@@ -26,5 +26,8 @@
       "disableStackTrace": false
     }
   },
-  "legacyExplorer": false
+  "legacyExplorer": false,
+	"slack": {
+		"enabled": false
+	}
 }

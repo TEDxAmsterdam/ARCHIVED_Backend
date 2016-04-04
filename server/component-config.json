@@ -11,5 +11,6 @@
   	}
   },
 	"./components/logger":{},
-	"./components/create-admin":{}
+	"./components/create-admin":{},
+	"./components/slack":{}
 }
