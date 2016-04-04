@@ -21,6 +21,14 @@
       "foreignKey": "authorId"
     }
   },
-  "acls": [],
+  "acls": [
+			{
+				"property": "authenticate",
+	      "accessType": "*",
+	      "principalType": "ROLE",
+	      "principalId": "SuperAdmin",
+	      "permission": "ALLOW"
+	    }
+	],
   "methods": []
 }

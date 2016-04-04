@@ -8,7 +8,7 @@ var email = process.env.LB_SU_UN;
 var password = process.env.LB_SU_PW;
 var username = 'administrator';
 
-if(!email) email = 'dave@dvelopers.nl';
+if(!email) email = 'test@dvelopers.nl';
 if(!password) password = 'test';
 
 adminUser = {
@@ -20,12 +20,14 @@ adminUser = {
 
 module.exports = function(loopbackApplication, options) {
 	console.log('create-admin loaded', adminUser);
-  var ACL, AccessToken, Role, RoleMapping, User, createDefaultAdmin, createSuperAdminRole;
+  var ACL, AccessToken, Role, RoleMapping, User, createDefaultAdmin, createSuperAdminRole, Author;
   ACL = loopbackApplication.models.ACL;
   Role = loopbackApplication.models.Role;
   RoleMapping = loopbackApplication.models.RoleMapping;
   User = loopbackApplication.models[authModelName];
   AccessToken = loopbackApplication.models[accessTokenModelName];
+	Author = loopbackApplication.models['Author'];
+
   if (!User) {
     User = loopbackApplication.models.User;
   }
@@ -115,6 +117,14 @@ module.exports = function(loopbackApplication, options) {
           principalId: 'SuperAdmin'
         });
       }
+      ACL.create({
+        model: Author.definition.name,
+        property: '*',
+        accessType: '*',
+        permission: 'ALLOW',
+        principalType: 'ROLE',
+        principalId: 'SuperAdmin'
+      });
     });
   };
 };
