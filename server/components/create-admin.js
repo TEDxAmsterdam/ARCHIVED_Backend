@@ -6,13 +6,14 @@ accessTokenModelName = 'accessToken';
 
 var email = process.env.LB_SU_UN;
 var password = process.env.LB_SU_PW;
+var username = 'administrator';
 
 if(!email) email = 'dave@dvelopers.nl';
 if(!password) password = 'test';
 
 adminUser = {
   email: email,
-  username: 'superadmin',
+  username: username,
   password: password,
   created: new Date
 };
