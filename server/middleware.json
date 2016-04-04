@@ -13,7 +13,7 @@
     },
     "helmet#xssFilter": {},
     "helmet#frameguard": {
-      "params": [ 
+      "params": [
         "deny"
        ]
     },
@@ -26,9 +26,10 @@
     "helmet#hidePoweredBy": {},
     "helmet#ieNoOpen": {},
     "helmet#noSniff": {},
-    "helmet#noCache": { 
+    "helmet#noCache": {
       "enabled": false
-    }
+    },
+		"./middleware/tracker": {}
   },
   "session": {
   },
