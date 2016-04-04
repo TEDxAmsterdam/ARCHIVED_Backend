@@ -7,6 +7,7 @@ module.exports = function() {
 
 			req.app.logger.log({
 		    type: 'tracker',
+				url: req.url,
 		    processingTime: ms
 		  });
 
