@@ -5,9 +5,9 @@ authModelName = 'user';
 accessTokenModelName = 'accessToken';
 
 adminUser = {
-  email: '',
-  username: 'newAdmin',
-  password: 'password',
+  email: process.env.LB_SU_UN,
+  username: 'superadmin',
+  password: process.env.LB_SU_PW,
   created: new Date
 };
 
