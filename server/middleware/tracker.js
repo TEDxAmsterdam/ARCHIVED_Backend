@@ -7,12 +7,12 @@ module.exports = function() {
 
 			req.app.logger.log({
 		    type: 'tracker',
-				url: req.url,
+				path: req.baseUrl,
 		    processingTime: ms
 		  });
 
 			req.app.slack.send('#api-activity',
-				req.url + '. Processing time: ' + ms + ' ms.');
+				req.baseUrl + '. Processing time: ' + ms + ' ms.');
     });
 		next();
   };
