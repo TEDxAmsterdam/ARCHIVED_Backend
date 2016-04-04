@@ -22,7 +22,11 @@ module.exports = function (loopbackApplication, options) {
 		if(!callback)
 		 	callback = function() {};
 
-		slack.chat.postMessage({token: this.token, channel: channel, text:msg}, function(err, data) {
+		var message = {token: this.token, channel: channel, text:msg};
+
+		console.log('post slack message', message);
+
+		slack.chat.postMessage(message, function(err, data) {
 			callback();
 		});
 	};
