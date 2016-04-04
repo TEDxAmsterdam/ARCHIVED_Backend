@@ -7,7 +7,7 @@ accessTokenModelName = 'accessToken';
 var email = process.env.LB_SU_UN;
 var password = process.env.LB_SU_PW;
 
-if(!email) email = 'test@127.0.0.1';
+if(!email) email = 'dave@dvelopers.nl';
 if(!password) password = 'test';
 
 adminUser = {
@@ -104,16 +104,6 @@ module.exports = function(loopbackApplication, options) {
         principalType: 'ROLE',
         principalId: 'SuperAdmin'
       });
-      if (accessTokenModelName !== 'AccessToken') {
-        ACL.create({
-          model: AccessToken.definition.name,
-          property: '*',
-          accessType: '*',
-          permission: 'ALLOW',
-          principalType: 'ROLE',
-          principalId: 'SuperAdmin'
-        });
-      }
       if (authModelName !== 'User') {
         ACL.create({
           model: User.definition.name,
