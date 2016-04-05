@@ -15,11 +15,6 @@
     }
   },
   "properties": {
-    "id": {
-      "type": "number",
-      "id": true,
-			"required": true
-    },
     "name": {
       "type": "string",
       "required": true
@@ -29,7 +24,12 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+		"posts": {
+      "type": "hasAndBelongsToMany",
+      "model": "Post"
+    }
+	},
   "acls": [
 		{
       "accessType": "*",

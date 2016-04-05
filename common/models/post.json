@@ -49,22 +49,13 @@
   "validations": [],
   "relations": {
 		"tags": {
-      "type": "referencesMany",
-      "model": "Tag",
-      "property": "tagIds",
-      "options": {
-        "validate": true,
-        "forceId": false
-      }
+      "type": "hasAndBelongsToMany",
+      "model": "Tag"
     },
 		"media": {
-      "type": "referencesMany",
+      "type": "hasMany",
       "model": "Media",
-      "property": "mediaIds",
-      "options": {
-        "validate": true,
-        "forceId": false
-      }
+      "property": "mediaIds"
     },
 		"author": {
       "type": "belongsTo",

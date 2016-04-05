@@ -11,7 +11,7 @@ module.exports = function(app) {
 
 	function createSchema() {
 			var ds = server.dataSources.mysqlDs;
-			var lbTables = ['User', 'AccessToken', 'ACL', 'RoleMapping', 'Role', 'Tag', 'Post', 'Author', 'Media'];
+			var lbTables = ['User', 'AccessToken', 'ACL', 'RoleMapping', 'Role', 'Tag', 'Post', 'Author', 'Media', 'PostTag'];
 			ds.autoupdate(lbTables, function(err, res) {
 				if (err) throw err;
 				console.log('Tables [' + lbTables + '] created in ', ds.adapter.name);
@@ -69,35 +69,41 @@ module.exports = function(app) {
   }
 
 	function createPosts(amount) {
-    for (var i = 1; i <= amount; i++) {
-      var newItem = {
-				id: i,
-        name: 'Post name ' + i,
-				slug: 'post-name-' + i,
-        description: 'Post description ' + i,
-        authorId: i,
-        tagIds: ['1', '2'],
-				mediaIds: ['1', '2', '3']
-      };
-      Post.create(newItem, function (err, res) {
-        if (err) console.log(err);
-        console.log('Created Post with id ' + res.id);
-      });
-    }
+		Tag.find({}, function(err, tags){
+			console.log('tags', tags);
+			for (var i = 1; i <= amount; i++) {
+	      var newItem = {
+					id: i,
+	        name: 'Post name ' + i,
+					slug: 'post-name-' + i,
+	        description: 'Post description ' + i,
+	        authorId: i,
+					mediaIds: ['1', '2', '3']
+	      };
+	      Post.create(newItem, function (err, res) {
+	        if (err) console.log(err);
+	        console.log('Created Post with id ' + res.id);
+
+					tags.forEach(function(t){
+						res.tags.add(t);
+					});
+	      });
+	    }
+		});
   }
 
 	function createTags(amount) {
-    for (var i = 1; i <= amount; i++) {
-      var newTag = {
+	  for (var i = 1; i <= amount; i++) {
+			var newTag = {
 				id: i,
-        name: "Tag" + i,
-        description: "Tag description " + i
-      };
-      Tag.create(newTag, function (err, res) {
-        if (err) console.log(err);
-        console.log('Created Tag with id ' + res.id);
-      });
-    }
+				name: "Tag" + i,
+				description: "Tag description " + i
+			};
+			Tag.create(newTag, function (err, res) {
+				if (err) console.log(err);
+				console.log('Created Tag with id ' + res.id);
+			});
+		}
   }
 
 	function createMedia(amount) {
