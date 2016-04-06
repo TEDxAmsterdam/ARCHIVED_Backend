@@ -10,11 +10,7 @@ By looking into the open source community to leverage the power of great develop
 
 Developers all over the world can apply to participate!
 
-Check out the [Community Website].
-
-# Development API Portal
-
-[API Reference]
+Check out the [Community Website] and apply to join!
 
 # About the Loopback Node.js Framework
 
@@ -35,8 +31,20 @@ LoopBack tools include:
 
 Command-line tool slc loopback to create applications, models, data sources, and so on.
 StrongLoop Arc, a graphical tool for editing LoopBack applications; and for deploying and monitoring applications.
-For more details, see http://loopback.io/.
+For more details, see the [Loopback] website.
 
+# Latest build on Staging
 
-[API Reference]: https://api-acc-tedx-amsterdam.herokuapp.com/explorer/
+Latest build of the API: [API Staging]
+
+# Stack
+
+* [Node.js]
+* [Loopback]
+* [Heroku]
+
+[API Staging]: https://api-acc-tedx-amsterdam.herokuapp.com/explorer/
 [Community Website]: http://dev.tedx.amsterdam/
+[Loopback]: http://loopback.io
+[Heroku]: https://www.heroku.com/
+[Node.js]: https://nodejs.org/en/
