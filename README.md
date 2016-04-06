@@ -1,10 +1,42 @@
-# TEDxAmsterdam API
+# TEDxDEV API
 
-[![Join the chat at https://gitter.im/TEDxAmsterdam/Backend](https://badges.gitter.im/TEDxAmsterdam/Backend.svg)](https://gitter.im/TEDxAmsterdam/Backend?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/TEDxAmsterdam/Backend](https://badges.gitter.im/TEDxAmsterdam/Backend.svg)](https://gitter.im/TEDxAmsterdam/Backend?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![GNU General Public License](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.en.html)
 
-[![GNU General Public License](https://img.shields.io/badge/license-GPL%20v3-${1:orange}.svg${2:?style=flat${3:-square}})](http://www.gnu.org/licenses/gpl-3.0.en.html)
-]]>
+# About
 
-# API Reference Documentation
+Sharing ideas about technology, enterainment and design; those are the three pillars that started TED off in the ‘80s. We want to continue to build upon the philosophy; to share and spread knowledge, inspire and create new ideas (and things) to achieve greatness.
 
-http://docs.tedxamsterdam.apiary.io/#reference
+By looking into the open source community to leverage the power of great developers who in return want to show and share their development skills; to their peers and other thinkerers by contributing under the TEDx flag; We want to make this an awesome and powerful statement to show that an aligned decentralised effort can bring about great new things.
+
+Developers all over the world can apply to participate!
+
+Check out the [Community Website].
+
+# Development API Portal
+
+[API Reference]
+
+# About the Loopback Node.js Framework
+
+LoopBack is a highly-extensible, open-source Node.js framework that enables you to:
+
+Create dynamic end-to-end REST APIs with little or no coding.
+Access data from Oracle, MySQL, PostgreSQL, MS SQL Server, MongoDB, SOAP and other REST APIs.
+Incorporate model relationships and access controls for complex APIs.
+Use built-in push, geolocation, and file services for mobile apps.
+Easily create client apps using Android, iOS, and JavaScript SDKs.
+Run your application on-premises or in the cloud.
+LoopBack consists of:
+
+A library of Node.js modules.
+Yeoman generators for scaffolding applications.
+Client SDKs for iOS, Android, and web clients.
+LoopBack tools include:
+
+Command-line tool slc loopback to create applications, models, data sources, and so on.
+StrongLoop Arc, a graphical tool for editing LoopBack applications; and for deploying and monitoring applications.
+For more details, see http://loopback.io/.
+
+
+[API Reference]: https://api-acc-tedx-amsterdam.herokuapp.com/explorer/
+[Community Website]: http://dev.tedx.amsterdam/
