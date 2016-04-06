@@ -1,5 +1,6 @@
 {
   "name": "user",
+	"plural": "users",
   "base": "User",
   "strict": false,
   "idInjection": true,

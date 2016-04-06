@@ -1,5 +1,6 @@
 {
   "name": "Tag",
+	"plural": "tags",
   "base": "PersistedModel",
   "strict": "throw",
   "idInjection": true,

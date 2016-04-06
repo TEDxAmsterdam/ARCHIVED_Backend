@@ -11,8 +11,8 @@ module.exports = function() {
 		    processingTime: ms
 		  });
 
-			req.app.slack.send('#api-activity',
-				req.baseUrl + '. Processing time: ' + ms + ' ms.');
+/*			req.app.slack.send('#api-activity',
+				req.baseUrl + '. Processing time: ' + ms + ' ms.'); */
     });
 		next();
   };
