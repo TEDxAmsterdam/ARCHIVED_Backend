@@ -1,6 +1,5 @@
 # TEDxDEV API
-
-[![Join the chat at https://gitter.im/TEDxAmsterdam/Backend](https://badges.gitter.im/TEDxAmsterdam/Backend.svg)](https://gitter.im/TEDxAmsterdam/Backend?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![GNU General Public License](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.en.html)
+[![GitHub issues](https://img.shields.io/github/issues/TEDxAmsterdam/Backend.svg)](https://github.com/TEDxAmsterdam/Backend/issues) [![Build Status](https://travis-ci.org/TEDxAmsterdam/Backend.svg?branch=master)](https://travis-ci.org/TEDxAmsterdam/Backend) [![Join the chat at https://gitter.im/TEDxAmsterdam/Backend](https://badges.gitter.im/TEDxAmsterdam/Backend.svg)](https://gitter.im/TEDxAmsterdam/Backend?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![GNU General Public License](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.en.html)
 
 The goal is to Provide the API backend for the new [TEDxAmsterdam] website - created by volunteers from all over the world.
 
