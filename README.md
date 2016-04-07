@@ -3,6 +3,22 @@
 
 The goal is to Provide the API backend for the new [TEDxAmsterdam] website - created by volunteers from all over the world.
 
+## Installation
+
+Clone the repository and run `npm install`:
+```
+git clone https://github.com/TEDxAmsterdam/Backend.git && cd Backend && npm install
+
+npm install -g generator-loopback
+
+```
+
+## Run the project
+
+```
+slc run
+```
+
 # About TEDx Open Source
 
 Sharing ideas about technology, enterainment and design; those are the three pillars that started TED off in the ‘80s. We want to continue to build upon the philosophy; to share and spread knowledge, inspire and create new ideas (and things) to achieve greatness.
