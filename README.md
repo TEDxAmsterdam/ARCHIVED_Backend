@@ -10,7 +10,6 @@ Clone the repository and run `npm install`:
 git clone https://github.com/TEDxAmsterdam/Backend.git && cd Backend && npm install
 
 npm install -g generator-loopback
-
 ```
 
 ## Run the project
