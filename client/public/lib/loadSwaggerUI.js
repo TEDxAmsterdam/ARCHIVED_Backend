@@ -1,5 +1,5 @@
 'use strict';
-
+/* jshint ignore:start */
 // Refactoring of inline script from index.html.
 /*global SwaggerUi, log, ApiKeyAuthorization, hljs, window, $ */
 $(function() {
@@ -116,5 +116,4 @@ $(function() {
     }
   }
 });
-
-
+/* jshint ignore:end */
