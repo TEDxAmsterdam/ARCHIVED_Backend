@@ -18,6 +18,20 @@ npm install -g generator-loopback
 slc run
 ```
 
+## API Editor
+
+To use the IBM Connect API Editor you can do the following:
+
+```
+npm install -g apiconnect
+```
+
+To run the editor: (from the project folder)
+```
+apic edit
+```
+
+
 # About TEDx Open Source
 
 Sharing ideas about technology, enterainment and design; those are the three pillars that started TED off in the ‘80s. We want to continue to build upon the philosophy; to share and spread knowledge, inspire and create new ideas (and things) to achieve greatness.
