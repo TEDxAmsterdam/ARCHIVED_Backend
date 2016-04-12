@@ -70,18 +70,8 @@ module.exports = function(app) {
 
 		return true;
   }
-
+  /* jshint ignore:start */
 	function createPosts(amount) {
-
-		var createdPost = function (err, res) {
-			if (err) console.log(err);
-			console.log('Created Post with id ' + res.id);
-
-			tags.forEach(function(t){
-				res.tags.add(t);
-			});
-		};
-
 		Tag.find({}, function(err, tags){
 			console.log('tags', tags);
 			for (var i = 1; i <= amount; i++) {
@@ -93,11 +83,18 @@ module.exports = function(app) {
 	        authorId: i,
 					mediaIds: ['1', '2', '3']
 	      };
-	      Post.create(newItem, createdPost);
+	      Post.create(newItem, function (err, res) {
+					if (err) console.log(err);
+					console.log('Created Post with id ' + res.id);
+
+					tags.forEach(function(t){
+						res.tags.add(t);
+					});
+				});
 	    }
 		});
   }
-
+	/* jshint ignore:end */
 	function createTags(amount) {
 
 		var createdTag = function (err, res) {
