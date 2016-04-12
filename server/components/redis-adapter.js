@@ -1,12 +1,12 @@
 module.exports = Adapter;
 
-var redis = require("redis")
+var redis = require("redis");
 var EventEmitter = require('events').EventEmitter;
 var inherits = require('util').inherits;
 var debug = require('debug')('strong-pubsub:redis');
 var defaults = require('lodash').defaults;
 
-function noop() {};
+function noop() {}
 
 /**
  * The **Redis** `Adapter`.
@@ -58,12 +58,12 @@ Adapter.prototype.connect = function(cb) {
   subClient.on('message', function(topic, message, options) {
     client.emit('message', topic, message, options);
   });
-}
+};
 
 Adapter.prototype.end = function(cb) {
   this.pubClient.end();
   this.subClient.end();
-}
+};
 
 /**
  * Publish a `message` to the specified `topic`.
@@ -86,7 +86,7 @@ Adapter.prototype.end = function(cb) {
 
 Adapter.prototype.publish = function(topic, message, options, cb) {
   this.redisPubClient.publish(topic, message, cb);
-}
+};
 
 /**
  * Subscribe to the specified `topic` or **topic pattern**.
@@ -104,7 +104,7 @@ Adapter.prototype.publish = function(topic, message, options, cb) {
 
 Adapter.prototype.subscribe = function(topic, options, cb) {
   this.redisSubClient.subscribe(topic, cb);
-}
+};
 
 /**
  * Unsubscribe from the specified `topic` or **topic pattern**.
@@ -116,4 +116,4 @@ Adapter.prototype.subscribe = function(topic, options, cb) {
 
 Adapter.prototype.unsubscribe = function(topic, cb) {
   this.redisSubClient.unsubscribe(topic, cb);
-}
+};

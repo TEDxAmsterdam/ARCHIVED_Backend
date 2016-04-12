@@ -15,7 +15,7 @@ adminUser = {
   email: email,
   username: username,
   password: password,
-  created: new Date
+  created: new Date()
 };
 
 module.exports = function(loopbackApplication, options) {
@@ -26,7 +26,7 @@ module.exports = function(loopbackApplication, options) {
   RoleMapping = loopbackApplication.models.RoleMapping;
   User = loopbackApplication.models[authModelName];
   AccessToken = loopbackApplication.models[accessTokenModelName];
-	Author = loopbackApplication.models['Author'];
+	Author = loopbackApplication.models.Author
 
   if (!User) {
     User = loopbackApplication.models.User;
@@ -89,7 +89,7 @@ module.exports = function(loopbackApplication, options) {
         }
         console.log('Created default \'admin\' user with password \'password\'.');
       });
-      BuiltInUserModel = loopbackApplication.models['User'];
+      BuiltInUserModel = loopbackApplication.models.User;
       ACL.create({
         model: BuiltInUserModel.definition.name,
         property: '*',
@@ -98,7 +98,7 @@ module.exports = function(loopbackApplication, options) {
         principalType: 'ROLE',
         principalId: 'SuperAdmin'
       });
-      BuiltInAccessTokenModel = loopbackApplication.models['AccessToken'];
+      BuiltInAccessTokenModel = loopbackApplication.models.AccessToken;
       ACL.create({
         model: BuiltInAccessTokenModel.definition.name,
         property: '*',
