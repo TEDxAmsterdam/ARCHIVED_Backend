@@ -2,14 +2,5 @@
   "db": {
     "name": "db",
     "connector": "memory"
-  },
-  "mysqlDs": {
-    "host": "us-cdbr-iron-east-03.cleardb.net",
-    "port": 3306,
-    "database": "ad_09d7ce7ca7000c6",
-    "password": "d4108f4b",
-    "name": "mysqlDs",
-    "connector": "mysql",
-    "user": "bbb0f98e2851c1"
   }
 }
