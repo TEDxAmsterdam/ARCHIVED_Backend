@@ -26,7 +26,7 @@ module.exports = function(loopbackApplication, options) {
   RoleMapping = loopbackApplication.models.RoleMapping;
   User = loopbackApplication.models[authModelName];
   AccessToken = loopbackApplication.models[accessTokenModelName];
-	Author = loopbackApplication.models.Author
+	Author = loopbackApplication.models.Author;
 
   if (!User) {
     User = loopbackApplication.models.User;

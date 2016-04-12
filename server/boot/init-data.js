@@ -39,6 +39,12 @@ module.exports = function(app) {
   }
 
 	function createAuthors(amount) {
+
+		var createdPerson = function (err, res) {
+			if (err) console.log(err);
+			else console.log('Created Author with id ' + res.id);
+		};
+
     for (var i = 1; i <= amount; i++) {
       var newPerson = {
 				id: i,
@@ -46,10 +52,7 @@ module.exports = function(app) {
         email: "author" + i + "@example.com",
 				password: 'password' + i
       };
-      Author.create(newPerson, function (err, res) {
-        if (err) console.log(err);
-				else console.log('Created Author with id ' + res.id);
-      });
+      Author.create(newPerson, createdPerson);
     }
 
 		Role.create({
