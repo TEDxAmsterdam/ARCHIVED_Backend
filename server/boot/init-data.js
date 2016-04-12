@@ -72,6 +72,16 @@ module.exports = function(app) {
   }
 
 	function createPosts(amount) {
+
+		var createdPost = function (err, res) {
+			if (err) console.log(err);
+			console.log('Created Post with id ' + res.id);
+
+			tags.forEach(function(t){
+				res.tags.add(t);
+			});
+		};
+
 		Tag.find({}, function(err, tags){
 			console.log('tags', tags);
 			for (var i = 1; i <= amount; i++) {
@@ -83,44 +93,43 @@ module.exports = function(app) {
 	        authorId: i,
 					mediaIds: ['1', '2', '3']
 	      };
-	      Post.create(newItem, function (err, res) {
-	        if (err) console.log(err);
-	        console.log('Created Post with id ' + res.id);
-
-					tags.forEach(function(t){
-						res.tags.add(t);
-					});
-	      });
+	      Post.create(newItem, createdPost);
 	    }
 		});
   }
 
 	function createTags(amount) {
+
+		var createdTag = function (err, res) {
+			if (err) console.log(err);
+			console.log('Created Tag with id ' + res.id);
+		};
+
 	  for (var i = 1; i <= amount; i++) {
 			var newTag = {
 				id: i,
 				name: "Tag" + i,
 				description: "Tag description " + i
 			};
-			Tag.create(newTag, function (err, res) {
-				if (err) console.log(err);
-				console.log('Created Tag with id ' + res.id);
-			});
+			Tag.create(newTag, createdTag);
 		}
   }
 
 	function createMedia(amount) {
-		  for (var i = 1; i <= amount; i++) {
-	      var newMedia = {
-					id: i,
-	        url: 'http://icons.iconarchive.com/icons/mattahan/umicons/256/Number-'+i+'-icon.png',
-					authorId: i
-	      };
-	      Media.create(newMedia, function (err, res) {
-	        if (err) console.log(err);
-	        console.log('Created Media with id ' + res.id);
-	      });
-	    }
+
+		var createdMedia = function (err, res) {
+			if (err) console.log(err);
+			console.log('Created Media with id ' + res.id);
+		};
+
+		for (var i = 1; i <= amount; i++) {
+	  	var newMedia = {
+				id: i,
+	      url: 'http://icons.iconarchive.com/icons/mattahan/umicons/256/Number-'+i+'-icon.png',
+				authorId: i
+	    };
+	    Media.create(newMedia, createdMedia);
+	  }
 	}
 
 	async.series([
