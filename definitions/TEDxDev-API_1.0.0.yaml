@@ -1,0 +1,45 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: TEDxDev API
+  x-ibm-name: TEDxDev-API
+  description: TEDxDev API
+  license:
+    url: LICENSE.md
+    name: MIT And GPL-3.0
+  contact:
+    name: Dave Ligthart
+    email: dave@tedx.amsterdam
+    url: 'http://dev.tedx.amsterdam'
+  termsOfService: 'http://dev.tedx.amsterdam/terms-of-service'
+host: $(catalog.host)
+basePath: /
+paths: {}
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+  clientSecretHeader:
+    in: header
+    name: X-IBM-Client-Secret
+    type: apiKey
+security:
+  - clientIdHeader: []
+    clientSecretHeader: []
+x-ibm-configuration:
+  assembly:
+    execute:
+      - invoke:
+          target-url: $(target-url)
+  enforced: true
+  testable: true
+  cors:
+    enabled: true
+produces:
+  - application/json
+consumes:
+  - application/json
+schemes:
+  - http
+  - https

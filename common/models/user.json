@@ -1,6 +1,6 @@
 {
   "name": "user",
-	"plural": "users",
+  "plural": "users",
   "base": "User",
   "strict": false,
   "idInjection": true,
@@ -8,20 +8,20 @@
     "validateUpsert": true
   },
   "properties": {
-		"user_id": {
+    "user_id": {
       "type": "string"
     }
-	},
+  },
   "validations": [],
   "relations": {},
   "acls": [
-		{
-			"property": "authenticate",
+    {
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "$everyone",
-      "permission": "ALLOW"
+      "permission": "ALLOW",
+      "property": "authenticate"
     }
-	],
+  ],
   "methods": {}
 }

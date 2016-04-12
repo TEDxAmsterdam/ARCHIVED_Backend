@@ -1,16 +1,16 @@
 {
-	"loopback-component-explorer": {
+  "loopback-component-explorer": {
     "mountPath": "/explorer",
-		"uiDirs": [
-			"/app/client/public",
-			"/Users/daveligthart/Projects/tedxdev/backend/client/public"
-		],
-		"apiInfo": {
-    	"title": "TEDxDEV API",
-    	"description": ""
-  	}
+    "uiDirs": [
+      "/app/client/public",
+      "/Users/daveligthart/Projects/tedxdev/backend/client/public"
+    ],
+    "apiInfo": {
+      "title": "TEDxDEV API",
+      "description": ""
+    }
   },
-	"./components/logger":{},
-	"./components/create-admin":{},
-	"./components/slack":{}
+  "./components/logger": {},
+  "./components/create-admin": {},
+  "./components/slack": {}
 }

@@ -12,17 +12,17 @@
       "id": true,
       "required": true
     },
-		"url": {
-			"type": "string"
-		}
+    "url": {
+      "type": "string"
+    }
   },
   "validations": [],
   "relations": {
-		"author": {
+    "author": {
       "type": "belongsTo",
       "model": "Author"
     }
-	},
+  },
   "acls": [
     {
       "accessType": "*",

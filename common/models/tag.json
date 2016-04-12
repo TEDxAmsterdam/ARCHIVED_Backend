@@ -1,8 +1,8 @@
 {
   "name": "Tag",
-	"plural": "tags",
+  "plural": "tags",
   "base": "PersistedModel",
-  "strict": "throw",
+  "strict": true,
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -16,28 +16,29 @@
     }
   },
   "properties": {
-    "name": {
+    "description": {
       "type": "string",
       "required": true
     },
-    "description": {
-      "type": "string"
+    "name": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
   "relations": {
-		"posts": {
+    "posts": {
       "type": "hasAndBelongsToMany",
       "model": "Post"
     }
-	},
+  },
   "acls": [
-		{
+    {
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW"
     }
-	],
-  "methods": []
+  ],
+  "methods": {}
 }

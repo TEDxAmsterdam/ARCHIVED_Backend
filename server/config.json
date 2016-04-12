@@ -27,7 +27,7 @@
     }
   },
   "legacyExplorer": false,
-	"slack": {
-		"enabled": false
-	}
+  "slack": {
+    "enabled": false
+  }
 }

@@ -1,21 +1,21 @@
 {
   "name": "Post",
-	"plural": "posts",
+  "plural": "posts",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-		"id": {
+    "id": {
       "type": "number",
-			"id": true,
+      "id": true,
       "required": true
     },
-		"slug": {
-			"type": "string",
+    "slug": {
+      "type": "string",
       "required": true
-		},
+    },
     "name": {
       "type": "string",
       "required": true
@@ -49,20 +49,20 @@
   },
   "validations": [],
   "relations": {
-		"tags": {
+    "tags": {
       "type": "hasAndBelongsToMany",
       "model": "Tag"
     },
-		"media": {
+    "media": {
       "type": "hasMany",
       "model": "Media",
       "property": "mediaIds"
     },
-		"author": {
+    "author": {
       "type": "belongsTo",
       "model": "Author"
     }
-	},
+  },
   "acls": [
     {
       "accessType": "*",

@@ -15,7 +15,7 @@
   },
   "User": {
     "dataSource": "mysqlDs",
-		"public": true
+    "public": true
   },
   "AccessToken": {
     "dataSource": "mysqlDs",
@@ -33,15 +33,15 @@
     "dataSource": "mysqlDs",
     "public": false
   },
-	"Tag": {
+  "Tag": {
     "dataSource": "mysqlDs",
     "public": true
   },
-	"Post": {
+  "Post": {
     "dataSource": "mysqlDs",
     "public": true
   },
-	"Media": {
+  "Media": {
     "dataSource": "mysqlDs",
     "public": true
   },

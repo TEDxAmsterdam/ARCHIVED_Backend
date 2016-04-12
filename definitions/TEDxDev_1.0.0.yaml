@@ -1,0 +1,21 @@
+product: 1.0.0
+info:
+  name: TEDxDev
+  title: TEDxDev
+  version: 1.0.0
+apis:
+  TEDxDev-API:
+    $ref: TEDxDev-API_1.0.0.yaml
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+plans:
+  Default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false

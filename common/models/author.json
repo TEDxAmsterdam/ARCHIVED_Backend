@@ -1,6 +1,6 @@
 {
   "name": "Author",
-	"plural": "authors",
+  "plural": "authors",
   "base": "User",
   "strict": "throw",
   "idInjection": true,
@@ -23,13 +23,13 @@
     }
   },
   "acls": [
-			{
-				"property": "authenticate",
-	      "accessType": "*",
-	      "principalType": "ROLE",
-	      "principalId": "SuperAdmin",
-	      "permission": "ALLOW"
-	    }
-	],
-  "methods": []
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "SuperAdmin",
+      "permission": "ALLOW",
+      "property": "authenticate"
+    }
+  ],
+  "methods": {}
 }
