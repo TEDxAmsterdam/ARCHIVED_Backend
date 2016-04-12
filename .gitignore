@@ -37,3 +37,8 @@ jspm_packages
 
 # Datasources
 ./server/datasources.json
+
+# Backup files
+*~
+.*~
+
