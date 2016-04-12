@@ -1,6 +1,7 @@
 {
   "name": "tedxapi",
   "version": "1.0.0",
+  "license" : "SEE LICENSE IN LICENSE.md",
   "main": "server/server.js",
   "scripts": {
     "start": "node .",
