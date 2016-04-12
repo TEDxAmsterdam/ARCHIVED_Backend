@@ -424,7 +424,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: file
+            type: object
       deprecated: false
     get:
       tags:
@@ -441,7 +441,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: file
+            type: object
       deprecated: false
   /Users/login:
     post:
@@ -474,12 +474,7 @@ paths:
 
 
 
-
-
-
-
                 - `user` - `{User}` - Data of the currently logged in user.
-
               (`include=user`)
 
 
@@ -1036,7 +1031,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: file
+            type: object
       deprecated: false
     get:
       tags:
@@ -1053,7 +1048,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: file
+            type: object
       deprecated: false
   '/posts/{id}/tags/{fk}':
     get:
@@ -1750,7 +1745,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: file
+            type: object
       deprecated: false
     get:
       tags:
@@ -1767,7 +1762,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: file
+            type: object
       deprecated: false
   '/media/{id}/author':
     get:
@@ -2046,7 +2041,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: file
+            type: object
       deprecated: false
     get:
       tags:
@@ -2063,7 +2058,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: file
+            type: object
       deprecated: false
   '/authors/{id}/posts/{fk}':
     get:
@@ -2479,12 +2474,7 @@ paths:
 
 
 
-
-
-
-
                 - `user` - `{User}` - Data of the currently logged in user.
-
               (`include=user`)
 
 
@@ -2965,7 +2955,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: file
+            type: object
       deprecated: false
     get:
       tags:
@@ -2982,7 +2972,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: file
+            type: object
       deprecated: false
   /users/login:
     post:
@@ -3015,12 +3005,7 @@ paths:
 
 
 
-
-
-
-
                 - `user` - `{User}` - Data of the currently logged in user.
-
               (`include=user`)
 
 
@@ -3301,7 +3286,7 @@ x-ibm-configuration:
   enforced: true
   cors:
     enabled: true
-  gateway: micro-gateway
+  gateway: datapower-gateway
   catalogs:
     apic-dev:
       properties:

@@ -2,7 +2,7 @@
   "name": "Author",
   "plural": "authors",
   "base": "User",
-  "strict": "throw",
+  "strict": true,
   "idInjection": true,
   "options": {
     "validateUpsert": true
