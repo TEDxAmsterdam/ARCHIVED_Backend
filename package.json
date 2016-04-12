@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node .",
-    "pretest": "jshint .",
+    "pretest": "jshint --exclude ./node_modules .",
     "posttest": "nsp check"
   },
   "dependencies": {
