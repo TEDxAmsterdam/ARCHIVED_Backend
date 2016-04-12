@@ -3,9 +3,16 @@ info:
   name: TEDxDev
   title: TEDxDev
   version: 1.0.0
+  contact:
+    name: TEDx DEV
+    email: dev@tedx.amsterdam
+    url: 'http://dev.tedx.amsterdam'
+  license:
+    name: MIT and GPL-3
+  termsOfService: 'http://dev.tedx.amsterdam/terms-of-service'
 apis:
-  TEDxDev-API:
-    $ref: TEDxDev-API_1.0.0.yaml
+  tedxapi:
+    $ref: tedxapi.yaml
 visibility:
   view:
     type: public

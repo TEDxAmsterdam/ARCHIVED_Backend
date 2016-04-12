@@ -9,7 +9,8 @@
   },
   "properties": {
     "user_id": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],

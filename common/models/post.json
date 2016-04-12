@@ -7,16 +7,33 @@
     "validateUpsert": true
   },
   "properties": {
+    "archived": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "authorId": {
+      "type": "number",
+      "required": true
+    },
+    "created": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
+    },
+    "description": {
+      "type": "string"
+    },
     "id": {
       "type": "number",
       "id": true,
       "required": true
     },
-    "slug": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "name": {
+    "slug": {
       "type": "string",
       "required": true
     },
@@ -25,26 +42,10 @@
       "required": true,
       "default": "new"
     },
-    "description": {
-      "type": "string"
-    },
-    "authorId": {
-      "type": "number"
-    },
     "tagIds": {
       "type": [
         "string"
       ]
-    },
-    "created": {
-      "type": "date",
-      "required": true,
-      "defaultFn": "now"
-    },
-    "archived": {
-      "type": "boolean",
-      "required": true,
-      "default": false
     }
   },
   "validations": [],

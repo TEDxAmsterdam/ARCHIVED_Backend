@@ -48,5 +48,9 @@
   "Author": {
     "dataSource": "mysqlDs",
     "public": true
+  },
+  "user": {
+    "dataSource": "db",
+    "public": true
   }
 }
