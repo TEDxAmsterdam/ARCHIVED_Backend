@@ -20,6 +20,7 @@
     "loopback-component-oauth2": "^2.4.0",
     "loopback-connector-mysql": "^2.2.1",
     "loopback-datasource-juggler": "^2.39.0",
+    "oauthio": "^0.3.3",
     "parse-database-url": "^0.3.0",
     "serve-favicon": "^2.0.1",
     "slack": "^6.1.0"
