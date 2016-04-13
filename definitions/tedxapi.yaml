@@ -424,7 +424,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: object
+            type: file
       deprecated: false
     get:
       tags:
@@ -441,7 +441,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: object
+            type: file
       deprecated: false
   /Users/login:
     post:
@@ -1031,7 +1031,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: object
+            type: file
       deprecated: false
     get:
       tags:
@@ -1048,7 +1048,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: object
+            type: file
       deprecated: false
   '/posts/{id}/tags/{fk}':
     get:
@@ -1745,7 +1745,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: object
+            type: file
       deprecated: false
     get:
       tags:
@@ -1762,7 +1762,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: object
+            type: file
       deprecated: false
   '/media/{id}/author':
     get:
@@ -2041,7 +2041,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: object
+            type: file
       deprecated: false
     get:
       tags:
@@ -2058,7 +2058,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: object
+            type: file
       deprecated: false
   '/authors/{id}/posts/{fk}':
     get:
@@ -2955,7 +2955,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: object
+            type: file
       deprecated: false
     get:
       tags:
@@ -2972,7 +2972,7 @@ paths:
         '200':
           description: Request was successful
           schema:
-            type: object
+            type: file
       deprecated: false
   /users/login:
     post:
@@ -3060,6 +3060,279 @@ paths:
       responses:
         '204':
           description: Request was successful
+      deprecated: false
+  /members:
+    post:
+      tags:
+        - Member
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: Member.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/Member'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Member'
+      deprecated: false
+    put:
+      tags:
+        - Member
+      summary: Update an existing model instance or insert a new one into the data source.
+      operationId: Member.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/Member'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Member'
+      deprecated: false
+    get:
+      tags:
+        - Member
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: Member.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Member'
+      deprecated: false
+  '/members/{id}/exists':
+    get:
+      tags:
+        - Member
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'Member.exists__get_members_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            required: []
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/members/{id}':
+    head:
+      tags:
+        - Member
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'Member.exists__head_members_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            required: []
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - Member
+      summary: Find a model instance by id from the data source.
+      operationId: Member.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Member'
+      deprecated: false
+    delete:
+      tags:
+        - Member
+      summary: Delete a model instance by id from the data source.
+      operationId: Member.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - Member
+      summary: Update attributes for a model instance and persist it into the data source.
+      operationId: Member.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/Member'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Member'
+      deprecated: false
+  /members/findOne:
+    get:
+      tags:
+        - Member
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: Member.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Member'
+      deprecated: false
+  /members/update:
+    post:
+      tags:
+        - Member
+      summary: Update instances of the model matched by where from the data source.
+      operationId: Member.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/Member'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /members/count:
+    get:
+      tags:
+        - Member
+      summary: Count instances of the model matched by where from the data source.
+      operationId: Member.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            required: []
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /members/change-stream:
+    post:
+      tags:
+        - Member
+      summary: Create a change stream.
+      operationId: Member.createChangeStream__post_members_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - Member
+      summary: Create a change stream.
+      operationId: Member.createChangeStream__get_members_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
       deprecated: false
 definitions:
   x-any:
@@ -3249,6 +3522,23 @@ definitions:
     required:
       - user_id
       - email
+    additionalProperties: false
+  Member:
+    properties:
+      id:
+        type: number
+        format: double
+      email:
+        type: string
+      firstName:
+        type: string
+      lastName:
+        type: string
+    required:
+      - id
+      - email
+      - firstName
+      - lastName
     additionalProperties: false
 swagger: '2.0'
 info:

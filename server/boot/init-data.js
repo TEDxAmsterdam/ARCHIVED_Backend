@@ -11,7 +11,7 @@ module.exports = function(app) {
 
 	function createSchema() {
 			var ds = server.dataSources.mysqlDs;
-			var lbTables = ['User', 'AccessToken', 'ACL', 'RoleMapping', 'Role', 'Tag', 'Post', 'Author', 'Media', 'PostTag'];
+			var lbTables = ['User', 'AccessToken', 'ACL', 'RoleMapping', 'Role', 'Tag', 'Post', 'Author', 'Media', 'PostTag', 'Member'];
 			ds.autoupdate(lbTables, function(err, res) {
 				if (err) throw err;
 				console.log('Tables [' + lbTables + '] created in ', ds.adapter.name);
