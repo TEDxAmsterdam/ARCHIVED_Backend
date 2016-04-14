@@ -4,7 +4,7 @@ module.exports = function(app) {
 
 	OAuth.initialize(app.get('oauth').key, app.get('oauth').secret);
 
-	app.get('/signin', OAuth.auth('linkedin', 'http://localhost:4001/oauth/redirect'));
+	app.get('/signin', OAuth.auth('linkedin', '/oauth/redirect'));
 
 	app.get('/oauth/redirect', OAuth.redirect(function(result, req, res) {
 	    if (result instanceof Error) {
