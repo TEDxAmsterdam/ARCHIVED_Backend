@@ -1,4 +1,5 @@
 var OAuth = require('oauthio');
+var md5 = require('md5');
 
 module.exports = function(app) {
 
@@ -26,6 +27,7 @@ module.exports = function(app) {
 	        console.log(me);
 					var member = app.models.Member;
 					member.create({
+						id: md5(me.id),
 						email: "",
 						firstName: me.firstname,
 						lastName: me.lastname,
