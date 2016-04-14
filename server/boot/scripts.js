@@ -2,7 +2,14 @@ var OAuth = require('oauthio');
 
 module.exports = function(app) {
 
-	var baseUrl = app.get('url');
+	// TODO: refactor
+	var baseUrl = 'http://localhost:4001';
+
+	if('staging' == process.env.NODE_ENV) {
+		baseUrl = 'https://api-acc-tedx-amsterdam.herokuapp.com';
+	} else if('production' == process.env.NODE_ENV) {
+		baseUrl = 'https://api-tedx-amsterdam.herokuapp.com';
+	}
 
 	OAuth.initialize(app.get('oauth').key, app.get('oauth').secret);
 
