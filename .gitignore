@@ -36,10 +36,8 @@ jspm_packages
 .node_repl_history
 
 # Datasources
-./server/datasources.json
 server/datasources.*.user.json
 
 # Backup files
 *~
 .*~
-
