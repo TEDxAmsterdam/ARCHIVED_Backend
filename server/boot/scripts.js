@@ -2,7 +2,7 @@ var OAuth = require('oauthio');
 
 module.exports = function(app) {
 
-	var baseUrl = app.get('url').replace(/\/$/, '');
+	var baseUrl = app.get('url');
 
 	OAuth.initialize(app.get('oauth').key, app.get('oauth').secret);
 
