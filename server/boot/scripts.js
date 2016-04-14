@@ -20,12 +20,12 @@ module.exports = function(app) {
 	// Step two: redirect after authentication success.
 	app.get('/oauth/redirect', OAuth.redirect(function(result, req, res) {
 	    if (result instanceof Error || null == result) {
-	        res.send(500, "error: " + result.message);
+	        res.status(500).send("error: " + result.message);
 	    }
-
+			
 	    result.me().done(function(me) {
 	        console.log(me);
-	        res.send(200, JSON.stringify(me));
+	        res.status(200).send(JSON.stringify(me));
 	    });
 	}));
 
@@ -33,7 +33,7 @@ module.exports = function(app) {
 	// Three step authentication process using a popup on the front-end.
 	app.get('/oauth/token', function(req, res, next) {
 		var token = OAuth.generateStateToken(req);
-		res.send(200, {token:token});
+		res.status(200).send({token:token});
 		next();
 	});
 
@@ -45,7 +45,7 @@ module.exports = function(app) {
 		console.log('code', code, req.session);
 
 		if(null === code) {
-			res.send(400, 'An error occured');
+			res.status(400).send('An error occured');
 			next();
 		}
 
