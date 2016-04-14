@@ -31,12 +31,12 @@
     "enabled": false
   },
 	"oauth": {
-		"key": "qrEyny_6uTaBqjNsd2EEjl79hAg",
-		"secret": "RfESWrngSQHdCKAEN1OuqHHhFDw"
+		"key": "",
+		"secret": ""
 	},
 	"stormpath": {
-		"app": "https://api.stormpath.com/v1/applications/2dOFY5UnOtoCGznZKlA5ax",
-		"key": "310HWH2M6UPYINU7FO1484W0X",
-		"secret": "SNaz2bTgaA/e2JCTvVXJjgg+22PDz+OR/+/W7Glt1rg"
+		"app": "",
+		"key": "",
+		"secret": ""
 	}
 }
