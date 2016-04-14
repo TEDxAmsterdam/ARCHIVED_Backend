@@ -2,6 +2,8 @@ var OAuth = require('oauthio');
 
 module.exports = function(app) {
 
+	OAuth.initialize(app.get('oauth').key, app.get('oauth').secret);
+
 	// TODO: refactor
 	var baseUrl = 'http://localhost:4001';
 
@@ -10,8 +12,6 @@ module.exports = function(app) {
 	} else if('production' == process.env.NODE_ENV) {
 		baseUrl = 'https://api-tedx-amsterdam.herokuapp.com';
 	}
-
-	OAuth.initialize(app.get('oauth').key, app.get('oauth').secret);
 
 	// Two step authentication process.
 	// Currently in use.
@@ -22,9 +22,20 @@ module.exports = function(app) {
 	    if (result instanceof Error || null == result) {
 	        res.status(500).send("error: " + result.message);
 	    }
-			
 	    result.me().done(function(me) {
 	        console.log(me);
+					var member = app.models.Member;
+					member.create({
+						email: "",
+						firstName: me.firstname,
+						lastName: me.lastname,
+						linkedinId: me.id,
+						linkedinPictureUrl: me.avatar,
+						linkedinUrl: me.url,
+						linkedinBio: me.bio
+					}, function(err, newMember) {
+						console.log('created new member', newMember, err);
+					});
 	        res.status(200).send(JSON.stringify(me));
 	    });
 	}));

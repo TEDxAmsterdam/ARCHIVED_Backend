@@ -31,7 +31,12 @@
     "enabled": false
   },
 	"oauth": {
-		"key": "qrEyny_6uTaBqjNsd2EEjl79hAg",
-		"secret": "RfESWrngSQHdCKAEN1OuqHHhFDw"
+		"key": "",
+		"secret": ""
+	},
+	"stormpath": {
+		"app": "https://api.stormpath.com/v1/applications/2dOFY5UnOtoCGznZKlA5ax",
+		"key": "",
+		"secret": ""
 	}
 }

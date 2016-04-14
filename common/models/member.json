@@ -7,14 +7,9 @@
     "validateUpsert": true
   },
   "properties": {
-    "id": {
-      "type": "number",
-      "id": true,
-      "required": true
-    },
     "email": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "firstName": {
       "type": "string",
@@ -23,7 +18,23 @@
     "lastName": {
       "type": "string",
       "required": true
-    }
+    },
+		"linkedinId": {
+			"type": "string",
+      "required": false
+		},
+		"linkedinPictureUrl": {
+			"type": "string",
+      "required": false
+		},
+		"linkedinUrl": {
+			"type": "string",
+      "required": false
+		},
+		"linkedinBio": {
+			"type": "string",
+      "required": false
+		}
   },
   "validations": [],
   "relations": {},
