@@ -19,9 +19,10 @@ module.exports = function(app) {
 	app.get('/signin', OAuth.auth('linkedin', baseUrl + '/oauth/redirect'));
 	// Step two: redirect after authentication success.
 	app.get('/oauth/redirect', OAuth.redirect(function(result, req, res) {
-	    if (result instanceof Error) {
+	    if (result instanceof Error || null == result) {
 	        res.send(500, "error: " + result.message);
 	    }
+
 	    result.me().done(function(me) {
 	        console.log(me);
 	        res.send(200, JSON.stringify(me));
