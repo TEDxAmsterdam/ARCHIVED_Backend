@@ -31,7 +31,18 @@
     },
     "./middleware/tracker": {}
   },
-  "session": {},
+	"session:before": {
+  	"cookie-parser": { "params": "test secret" }
+	},
+  "session": {
+		"express-session": {
+	    "params": {
+	      "secret": "other test secret",
+	      "saveUninitialized": true,
+	      "resave": true
+			}
+    }
+	},
   "auth": {},
   "parse": {},
   "routes": {
@@ -41,7 +52,11 @@
       ]
     }
   },
-  "files": {},
+  "files": {
+		 "loopback#static": {
+      "params": "$!../client/html"
+    }
+	},
   "final": {
     "loopback#urlNotFound": {}
   },

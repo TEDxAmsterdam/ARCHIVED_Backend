@@ -11,7 +11,9 @@
   "dependencies": {
     "async": "^2.0.0-rc.2",
     "compression": "^1.0.3",
+    "cookie-parser": "^1.4.1",
     "cors": "^2.5.2",
+    "express-session": "^1.13.0",
     "helmet": "^0.14.0",
     "logfmt": "^1.2.0",
     "loopback": "^2.22.0",
