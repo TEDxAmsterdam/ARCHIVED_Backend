@@ -6,13 +6,32 @@ module.exports = function(app) {
 	OAuth.initialize(app.get('oauth').key, app.get('oauth').secret);
 
 	// TODO: refactor
-	var baseUrl = 'http://localhost:4001';
-
+	var baseUrl = 'http://localhost:3000';
 	if('staging' == process.env.NODE_ENV) {
 		baseUrl = 'https://api-acc-tedx-amsterdam.herokuapp.com';
 	} else if('production' == process.env.NODE_ENV) {
 		baseUrl = 'https://api-tedx-amsterdam.herokuapp.com';
 	}
+
+	app.get('/getdebug', function(req, res){
+		OAuth.auth('linkedin', req.session)
+			.then(function (request_object) {
+				return request_object.get('/v1/people/~:(id,first-name,last-name,headline,picture-url)?format=json');
+			})
+			.then(function (info) {
+      	console.log('info', info);
+        //login your user here.
+        res.status(200).send(JSON.stringify(info));
+    })
+			.fail(function (e) {
+        res.status(400).send('An error occured while posting the message');
+      });
+	});
+
+	app.post('/postdebug', function(req, res){
+		console.log(req.body);
+		res.status(200).send(JSON.stringify(req.body));
+	});
 
 	// Two step authentication process.
 	// Currently in use.
@@ -23,10 +42,12 @@ module.exports = function(app) {
 	    if (result instanceof Error || null == result) {
 	        res.status(500).send("error: " + result.message);
 	    }
+			var redirectTo = app.get('oauth').redirect;
 	    result.me().done(function(me) {
+					console.log(req.session);
 	        console.log(me);
 					var member = app.models.Member;
-					member.create({
+					member.upsert({
 						id: md5(me.id),
 						email: "",
 						firstName: me.firstname,
@@ -37,53 +58,11 @@ module.exports = function(app) {
 						linkedinBio: me.bio
 					}, function(err, newMember) {
 						console.log('created new member', newMember, err);
+						if(err){
+							res.status(500).send('login error');
+						}
+						res.redirect(301, redirectTo);
 					});
-	        res.status(200).send(JSON.stringify(me));
 	    });
 	}));
-
-	// Below is not used; for demo purposes:
-	// Three step authentication process using a popup on the front-end.
-	app.get('/oauth/token', function(req, res, next) {
-		var token = OAuth.generateStateToken(req);
-		res.status(200).send({token:token});
-		next();
-	});
-
-	// This function is not working properly yet; nearly there.
-	app.post('/auth', function(req, res, next) {
-
-		var code =  req.query.code; // todo: change to request code from req.body instead of query.
-
-		console.log('code', code, req.session);
-
-		if(null === code) {
-			res.status(400).send('An error occured');
-			next();
-		}
-
-		// This should work:
-  	OAuth.auth('linkedin', req.session, {
-        code: code
-    })
-    .then(function (request_object) {
-				return request_object.get('/me');
-    })
-    .then(function (info) {
-        var user = {
-            email: info.email,
-            firstname: info.first_name,
-            lastname: info.last_name
-        };
-        //login your user here.
-        res.status(200).send('Successfully logged in');
-				next();
-    })
-    .fail(function (e) {
-        //handle errors here
-        res.status(400).send('An error occured');
-				next();
-    });
-
-	});
 };

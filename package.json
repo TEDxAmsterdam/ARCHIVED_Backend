@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "async": "^2.0.0-rc.2",
+    "body-parser": "^1.15.0",
     "compression": "^1.0.3",
     "cookie-parser": "^1.4.1",
     "cors": "^2.5.2",
@@ -25,6 +26,7 @@
     "md5": "^2.1.0",
     "oauthio": "^0.3.3",
     "parse-database-url": "^0.3.0",
+    "request": "^2.71.0",
     "serve-favicon": "^2.0.1",
     "slack": "^6.1.0",
     "stormpath": "^0.18.2"

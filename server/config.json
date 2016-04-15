@@ -32,7 +32,8 @@
   },
 	"oauth": {
 		"key": "",
-		"secret": ""
+		"secret": "",
+		"redirect": ""
 	},
 	"stormpath": {
 		"app": "",

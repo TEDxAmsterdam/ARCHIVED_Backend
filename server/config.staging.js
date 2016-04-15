@@ -12,6 +12,7 @@ module.exports = {
 	},
 	oauth: {
 		key: process.env.OAUTH_KEY,
-		secret: process.env.OAUTH_SECRET
+		secret: process.env.OAUTH_SECRET,
+		redirect: "https://acc-tedx-amsterdam.herokuapp.com/user/profile"
 	}
 };

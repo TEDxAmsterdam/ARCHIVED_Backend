@@ -39,6 +39,58 @@
 		"linkedinBio": {
 			"type": "string",
       "required": false
+		},
+		"gender": {
+			"type": "string",
+      "required": false
+		},
+		"address": {
+			"type": "string",
+      "required": false
+		},
+		"zipcode": {
+			"type": "string",
+      "required": false
+		},
+		"city": {
+			"type": "string",
+      "required": false
+		},
+		"country": {
+			"type": "string",
+      "required": false
+		},
+		"phoneNumber": {
+			"type": "string",
+      "required": false
+		},
+		"twitterUsername": {
+			"type": "string",
+      "required": false
+		},
+		"website": {
+			"type": "string",
+      "required": false
+		},
+		"birthday": {
+			"type": "string",
+      "required": false
+		},
+		"organization": {
+			"type": "string",
+      "required": false
+		},
+		"function": {
+			"type": "string",
+      "required": false
+		},
+		"motivation": {
+			"type": "string",
+      "required": false
+		},
+		"newsletterOptIn": {
+			"type": "boolean",
+      "required": false
 		}
   },
   "validations": [],
